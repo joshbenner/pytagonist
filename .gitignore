@@ -6,9 +6,10 @@ __pycache__/
 
 # C extensions
 *.so
+*.o
 
 # Generated C files
-pytagonist.c
+_drafter.c
 
 # Distribution / packaging
 .Python

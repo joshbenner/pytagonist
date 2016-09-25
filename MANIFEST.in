@@ -1,1 +1,10 @@
 recursive-include drafter *
+recursive-exclude drafter .git*
+exclude config.gypi config.mk
+prune drafter/bin
+prune drafter/build
+prune drafter/features
+prune drafter/test
+prune drafter/ext/snowcrash/test
+prune drafter/ext/snowcrash/ext/markdown-parser/test
+prune drafter/ext/sos/test

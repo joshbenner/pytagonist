@@ -17,5 +17,5 @@ drafter:
 .PHONY: clean
 clean:
 	python setup.py clean
-	rm -rf pytagonist.c pytagonist.so .tox .cache build dist
-	$(MAKE) -C drafter clean
+	rm -rf _drafter.c _drafter.so _drafter.o .tox .cache build dist
+	$(MAKE) -C drafter distclean
