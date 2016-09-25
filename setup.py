@@ -1,6 +1,7 @@
 import os
 from setuptools import setup
 from setuptools.command.sdist import sdist
+from setuptools.command.develop import develop
 from distutils.command.build import build
 from distutils import log
 from subprocess import call
@@ -9,19 +10,32 @@ SETUP_PATH = os.path.dirname(os.path.abspath(__file__))
 DRAFTER_PATH = os.path.join(SETUP_PATH, 'drafter')
 
 
+def build_drafter():
+    log.info('Building drafter')
+    code = call(['make', 'drafter'], cwd=DRAFTER_PATH)
+    if code != 0:
+        raise RuntimeError('Cannot build drafter library')
+
+
 class Build(build):
     """
-    Custome builder that runs drafter Makefile instead of build_clib.
+    Custom builder that runs drafter Makefile instead of build_clib.
 
     This is to avoid having to reproduce all the build configurations of drafter
     (and its dependencies).
     """
     def run(self):
-        log.info('Building drafter')
-        code = call(['make', 'drafter'], cwd=DRAFTER_PATH)
-        if code != 0:
-            raise RuntimeError('Cannot build drafter library')
+        build_drafter()
         build.run(self)
+
+
+class Develop(develop):
+    """
+    Custom develop-mode builder that runs Makefile.
+    """
+    def run(self):
+        build_drafter()
+        develop.run(self)
 
 
 class SourceDistribution(sdist):
@@ -45,6 +59,7 @@ setup(
     use_scm_version=True,
     cmdclass={
         'build': Build,
+        'develop': Develop,
         'sdist': SourceDistribution
     },
     py_modules=['pytagonist'],
