@@ -48,7 +48,7 @@ setup(
         'sdist': SourceDistribution
     },
     py_modules=['pytagonist'],
-    url='',
+    url='https://github.com/joshbenner/pytagonist',
     license='MIT',
     author='Josh Benner',
     author_email='josh@bennerweb.com',
