@@ -1,5 +1,7 @@
 # Pytagonist
 
+[![Build Status](https://travis-ci.org/joshbenner/pytagonist.svg?branch=master)](https://travis-ci.org/joshbenner/pytagonist)
+
 Pytagonist is a Python library for parsing API Blueprint documents into
 [API Elements](http://api-elements.readthedocs.io/en/latest/)
 structures. It is a wrapper around the
