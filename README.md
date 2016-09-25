@@ -5,6 +5,13 @@ Pytagonist is a Python library for parsing API Blueprint documents into
 structures. It is a wrapper around the
 [Drafter](https://github.com/apiaryio/drafter) library.
 
+## The Name
+
+Pytagonist is a questionable play on the Node.js wrapper of Drafter,
+called [Protagonist](https://github.com/apiaryio/protagonist), which is
+itself a cleverly-named cousin to the core C library that does the real
+parsing, [Snow Crash](https://github.com/apiaryio/snowcrash).
+
 ## Parsing
 
 ```python
