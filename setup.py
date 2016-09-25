@@ -61,5 +61,15 @@ setup(
     ],
     extras_require={
         'test': ['pytest']
-    }
+    },
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Natural Language :: English',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2.7',
+        'Topic :: Documentation',
+        'Topic :: Text Processing :: Markup'
+    ]
 )
